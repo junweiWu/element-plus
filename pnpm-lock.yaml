@@ -31,7 +31,7 @@ importers:
       '@types/sass': 1.43.1
       '@typescript-eslint/eslint-plugin': 5.10.0
       '@typescript-eslint/parser': 5.10.0
-      '@vue/test-utils': 2.0.0-rc.16
+      '@vue/test-utils': 2.0.0-rc.18
       '@vueuse/core': ^7.5.3
       async-validator: ^4.0.7
       chalk: 4.1.2
@@ -110,7 +110,7 @@ importers:
       '@types/sass': 1.43.1
       '@typescript-eslint/eslint-plugin': 5.10.0_3b6b276e93ead7cf6063f183a5e18d1f
       '@typescript-eslint/parser': 5.10.0_eslint@8.7.0+typescript@4.5.4
-      '@vue/test-utils': 2.0.0-rc.16_vue@3.2.27
+      '@vue/test-utils': 2.0.0-rc.18_vue@3.2.27
       chalk: 4.1.2
       components-helper: 1.0.5
       csstype: 2.6.19
@@ -2295,8 +2295,8 @@ packages:
     resolution: {integrity: sha512-rpAn9k6O08Lvo7ekBIAnkOukX/4EsEQLPrRJBKhIEasMsOI5eX0f6mq1sDUSY7cgAqWw2d7QtP74CWxdXoyKxA==}
     dev: true
 
-  /@vue/test-utils/2.0.0-rc.16_vue@3.2.27:
-    resolution: {integrity: sha512-TubikDVkI2LuRKRPSLv3lYpbpvvucT2DIcGqfBVpvYs4W19u0EBTJEdmfwmSuLY7H1TyAr9Stur3PI1sWWvTGQ==}
+  /@vue/test-utils/2.0.0-rc.18_vue@3.2.27:
+    resolution: {integrity: sha512-aifolXjVdsogjaLmDoZ0FU8vN+R67aWmg9OuVeED4w5Ij5GFQLrlhM19uhWe/r5xXUL4fXMk3pX5wW6FJP1NcQ==}
     peerDependencies:
       vue: ^3.0.1
     dependencies:
