@@ -241,7 +241,7 @@ export default defineComponent({
       const { modelValue } = props
       const { lazy, multiple, checkStrictly } = config.value
       const leafOnly = !checkStrictly
-      // 多选时考虑全选项的渲染
+      // 源代码无全选，没从全量数据中过滤，修改为从全量中过滤，多选时考虑全选的渲染
       if (multiple) {
         let allNode = null
         const nodes = getFlattedNodes(leafOnly)?.filter((node) => {
@@ -320,7 +320,9 @@ export default defineComponent({
       } else {
         newNodes.forEach((node) => node.doCheck(true))
       }
-      checkedNodes.value = newNodes
+      checkedNodes.value = newNodes.filter(
+        (node) => node.data?.value !== 'cascader-all'
+      )
       nextTick(scrollToExpandingNode)
     }
 
