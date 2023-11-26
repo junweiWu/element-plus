@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { rightLogoSmallSponsors } from '../../../config/sponsors'
-import { sendEvent } from '../../../config/analytics'
 import { isDark } from '../../composables/dark'
-const onItemClick = (item: any) => {
-  sendEvent('sp_click', item.name, 'right_logo_small')
-}
 </script>
 
 <template>
@@ -29,7 +25,6 @@ const onItemClick = (item: any) => {
           item.slogan_cn || item.slogan
         }`"
         target="_blank"
-        @click="onItemClick(item)"
       >
         <div
           :class="[

@@ -1,3 +1,5 @@
+
+@use './dsh/index.scss';
 @use './base.scss';
 // component styles
 @use './affix.scss';
@@ -15,6 +17,7 @@
 @use './card.scss';
 @use './carousel-item.scss';
 @use './carousel.scss';
+@use './dsh/dsh-cascader-panel.scss';
 @use './cascader-panel.scss';
 @use './cascader.scss';
 @use './check-tag.scss';

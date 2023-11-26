@@ -30,7 +30,9 @@ export default class Store {
     const nodes = (data || []).map(
       (nodeData) => new Node(nodeData, this.config)
     )
-    this.nodes = nodes
+    this.nodes = [
+      new Node({ label: '全选', value: 'cascader-all' }, this.config),
+    ].concat(nodes)
     this.allNodes = flatNodes(nodes, false)
     this.leafNodes = flatNodes(nodes, true)
   }

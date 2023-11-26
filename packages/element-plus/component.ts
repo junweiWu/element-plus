@@ -13,6 +13,7 @@ import { ElCalendar } from '@element-plus/components/calendar'
 import { ElCard } from '@element-plus/components/card'
 import { ElCarousel, ElCarouselItem } from '@element-plus/components/carousel'
 import { ElCascader } from '@element-plus/components/cascader'
+import { DshCascader } from '@element-plus/components/dsh-cascader'
 import { ElCascaderPanel } from '@element-plus/components/cascader-panel'
 import { ElCheckTag } from '@element-plus/components/check-tag'
 import {
@@ -122,6 +123,7 @@ export default [
   ElCard,
   ElCarousel,
   ElCarouselItem,
+  DshCascader,
   ElCascader,
   ElCascaderPanel,
   ElCheckTag,

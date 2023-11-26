@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import { isClient } from '@vueuse/core'
 import { useLang } from '../../composables/lang'
 import resourceLocale from '../../../i18n/pages/resource.json'
-import { sendEvent } from '../../../config/analytics'
 const mirrorUrl = 'element-plus.gitee.io'
 const isMirrorUrl = () => {
   if (!isClient) return
@@ -26,9 +25,6 @@ const resourceUrl = {
 
 const lang = useLang()
 const resourceLang = computed(() => resourceLocale[lang.value])
-const onClick = (item: string) => {
-  sendEvent('resource_download', item)
-}
 </script>
 
 <template>
@@ -44,11 +40,7 @@ const onClick = (item: string) => {
           <p>
             {{ resourceLang.axureIntro }}
           </p>
-          <a
-            target="_blank"
-            :href="resourceUrl.axure"
-            @click="onClick('axure')"
-          >
+          <a target="_blank" :href="resourceUrl.axure">
             <el-button type="primary">{{ resourceLang.download }}</el-button>
           </a>
         </el-card>
@@ -60,11 +52,7 @@ const onClick = (item: string) => {
           <p>
             {{ resourceLang.sketchIntro }}
           </p>
-          <a
-            target="_blank"
-            :href="resourceUrl.sketch"
-            @click="onClick('sketch')"
-          >
+          <a target="_blank" :href="resourceUrl.sketch">
             <el-button type="primary">{{ resourceLang.download }}</el-button>
           </a>
         </el-card>
@@ -79,7 +67,6 @@ const onClick = (item: string) => {
           <a
             href="https://www.figma.com/community/file/1021254029764378306"
             target="_blank"
-            @click="onClick('figma')"
           >
             <el-button type="primary">{{ resourceLang.download }}</el-button>
           </a>
@@ -95,7 +82,6 @@ const onClick = (item: string) => {
           <a
             href="https://www.figma.com/community/file/1256091634199852065"
             target="_blank"
-            @click="onClick('figma')"
           >
             <el-button type="primary">{{ resourceLang.download }}</el-button>
           </a>

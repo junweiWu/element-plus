@@ -1,6 +1,6 @@
 {
-  "name": "element-plus",
-  "version": "0.0.0-dev.1",
+  "name": "code-monkey-ui",
+  "version": "1.0.0",
   "description": "A Component Library for Vue 3",
   "keywords": [
     "element-plus",
@@ -8,7 +8,9 @@
     "component library",
     "ui framework",
     "ui",
-    "vue"
+    "vue",
+    "dsh",
+    "code-monkey"
   ],
   "homepage": "https://element-plus.org/",
   "bugs": {
