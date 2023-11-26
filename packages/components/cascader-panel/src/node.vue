@@ -16,7 +16,7 @@
     ]"
     @mouseenter="handleHoverExpand"
     @focus="handleHoverExpand"
-    @click="handleClick"
+    @click="handleClick(node)"
   >
     <!-- prefix -->
     <el-checkbox
@@ -46,7 +46,7 @@
     </el-icon>
 
     <!-- content -->
-    <node-content />
+    <node-content :only-check="onlyCheck" />
 
     <!-- postfix -->
     <template v-if="!isLeaf">
@@ -93,6 +93,10 @@ export default defineComponent({
       required: true,
     },
     menuId: String,
+    onlyThis: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   emits: ['expand'],
@@ -132,6 +136,13 @@ export default defineComponent({
       panel.handleCheckChange(node, checked)
     }
 
+    const onlyCheck = () => {
+      const { node } = props
+      panel.checkedNodes.forEach((item) => item.doCheck(false))
+      panel.handleCheckChange(node, false)
+      panel.onlyThisConfirm(node.value)
+    }
+
     const doLoad = () => {
       panel.lazyLoad(props.node, () => {
         if (!isLeaf.value) doExpand()
@@ -151,8 +162,16 @@ export default defineComponent({
       node.loaded ? doExpand() : doLoad()
     }
 
-    const handleClick = () => {
-      if (isHoverMenu.value && !isLeaf.value) return
+    const handleClick = (node: CascaderNode) => {
+      if (node.data?.value === 'cascader-all') {
+        handleSelectCheck(node.checked)
+        panel.checkedAll(node.checked)
+        return
+      }
+      if (isHoverMenu.value) {
+        handleSelectCheck(!node.checked)
+        return
+      }
 
       if (
         isLeaf.value &&
@@ -203,6 +222,7 @@ export default defineComponent({
       handleClick,
       handleCheck,
       handleSelectCheck,
+      onlyCheck,
     }
   },
 })

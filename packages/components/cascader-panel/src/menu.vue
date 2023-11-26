@@ -14,6 +14,7 @@
       :key="node.uid"
       :node="node"
       :menu-id="menuId"
+      :only-this="onlyThis"
       @expand="handleExpand"
     />
     <div v-if="isLoading" :class="ns.e('empty-text')">
@@ -65,6 +66,10 @@ export default defineComponent({
     index: {
       type: Number,
       required: true,
+    },
+    onlyThis: {
+      type: Boolean,
+      default: true,
     },
   },
 

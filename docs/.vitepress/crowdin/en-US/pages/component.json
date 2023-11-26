@@ -79,6 +79,10 @@
         "text": "Cascader"
       },
       {
+        "link": "/dsh-cascader",
+        "text": "DshCascader"
+      },
+      {
         "link": "/checkbox",
         "text": "Checkbox"
       },
