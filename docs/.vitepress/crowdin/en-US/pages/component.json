@@ -49,6 +49,15 @@
       }
     ]
   },
+  "dsh": {
+    "text": "道上会自定义组件",
+    "children": [
+      {
+        "link": "/dsh-cascader",
+        "text": "DshCascader"
+      }
+    ]
+  },
   "configuration": {
     "text": "Configuration",
     "children": [

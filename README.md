@@ -56,56 +56,6 @@ You can also try Element Plus out with the components built-in playground.
 
 [![Edit element-plus](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/element-plus-demo-dxtcr)
 
-<p align="center">
-  <b>Special thanks to the generous sponsorship by:</b>
-</p>
-<br/>
-<p align="center">
-  <b>Platinum Sponsors</b>
-</p>
-<table align="center" cellspacing="0" cellpadding="0">
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://www.vform666.com/" target="_blank">
-          <img width="150px" src="https://user-images.githubusercontent.com/17680888/156870588-b25a42d5-888b-4943-8b1b-5239dfd8f4d2.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://js.design?source=element-plus" target="_blank">
-          <img width="150px" src="https://user-images.githubusercontent.com/17680888/160634485-df0d00af-8633-4ab8-9a72-aac2b65d1d36.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://www.misboot.com/?from=element-plus" target="_blank">
-          <img width="150px" src="https://github-production-user-asset-6210df.s3.amazonaws.com/82012629/250157573-b8ab8d68-ff6b-496f-beb1-9863a545d2af.png">
-        </a>
-      </td>
-    </tr>
-    </tbody>
-</table>
-<p align="center">
-  <b>Gold Sponsors</b>
-</p>
-<table align="center" cellspacing="0" cellpadding="0">
-  <tbody>
-    <tr>
-      <td align="center" valign="middle">
-        <a href="https://wonderful-code.gitee.io/?from=element-plus" target="_blank">
-          <img width="130px" src="https://user-images.githubusercontent.com/17680888/173179536-30e35fd1-cd5a-482a-bc41-9d5f0aa66fd4.png">
-        </a>
-      </td>
-      <td align="center" valign="middle">
-        <a href="https://bit.dev/?from=element-ui" target="_blank">
-          <img width="130px" src="https://user-images.githubusercontent.com/10095631/41342907-e44e7196-6f2f-11e8-92f2-47702dc8f059.png">
-        </a>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
----
-
 ## Translations
 
 Element Plus is translated to multiple languages, you can click the badge to help up update the translation or apply to become

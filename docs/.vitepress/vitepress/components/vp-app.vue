@@ -14,7 +14,6 @@ import VPNav from './vp-nav.vue'
 import VPSubNav from './vp-subnav.vue'
 import VPSidebar from './vp-sidebar.vue'
 import VPContent from './vp-content.vue'
-import VPSponsors from './vp-sponsors.vue'
 
 // const USER_PREFER_GITHUB_PAGE = 'USER_PREFER_GITHUB_PAGE'
 const [isSidebarOpen, toggleSidebar] = useToggle(false)
@@ -129,9 +128,7 @@ onMounted(async () => {
       @open-menu="toggleSidebar(true)"
     />
     <VPSidebar :open="isSidebarOpen" @close="toggleSidebar(false)">
-      <template #top>
-        <VPSponsors />
-      </template>
+      <template #top />
       <template #bottom>
         <slot name="sidebar-bottom" />
       </template>

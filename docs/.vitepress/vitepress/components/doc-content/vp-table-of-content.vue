@@ -6,9 +6,6 @@ import { useActiveSidebarLinks } from '../../composables/active-bar'
 
 import sponsorLocale from '../../../i18n/component/sponsor.json'
 import { useLang } from '../../composables/lang'
-import SponsorsButton from '../sponsors/sponsors-button.vue'
-import SponsorRightTextList from '../sponsors/right-richtext-list.vue'
-import SponsorRightLogoSmallList from '../sponsors/right-logo-small-list.vue'
 import tag from '../../../plugins/tag'
 // import SponsorLarge from '../vp-sponsor-large.vue'
 

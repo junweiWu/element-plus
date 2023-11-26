@@ -3,7 +3,6 @@ import { computed, reactive, ref } from 'vue'
 import { useEventListener, useParallax, useThrottleFn } from '@vueuse/core'
 import { useLang } from '../../composables/lang'
 import homeLocale from '../../../i18n/pages/home.json'
-import HomeSponsors from '../home/home-sponsors.vue'
 import HomeCards from '../home/home-cards.vue'
 import HomeFooter from './vp-footer.vue'
 import type { CSSProperties } from 'vue'
@@ -141,7 +140,6 @@ useEventListener(window, 'scroll', handleScroll)
       alt="banner"
       class="mobile-banner"
     />
-    <HomeSponsors />
     <HomeCards />
   </div>
   <HomeFooter :is-home="true" />

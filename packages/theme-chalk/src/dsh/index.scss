@@ -1,0 +1,38 @@
+// styles/element/index.scss
+/* 只需要重写你需要的即可 */
+@forward '../common/var.scss' with (
+  $font-size: (
+    'extra-large': 18px,
+    'large': 16px,
+    'medium': 14px,
+    'base': 12px,
+    'small': 11px,
+    'extra-small': 10px,
+  ),
+  $colors: (
+    'white': #ffffff,
+    'black': #000000,
+    'primary': (
+      'base': #005BF5,
+    ),
+    'success': (
+      'base': #67c23a,
+    ),
+    'warning': (
+      'base': #e6a23c,
+    ),
+    'danger': (
+      'base': #f56c6c,
+    ),
+    'error': (
+      'base': #f56c6c,
+    ),
+    'info': (
+      'base': #909399,
+    ),
+  ),
+);
+
+// 如果只是按需导入，则可以忽略以下内容。
+// 如果你想导入所有样式:
+// @use "element-plus/theme-chalk/src/index.scss" as *;

@@ -9,6 +9,7 @@
       :ref="(item) => (menuList[index] = item)"
       :index="index"
       :nodes="[...menu]"
+      :only-this="onlyThis"
     />
   </div>
 </template>
@@ -75,10 +76,20 @@ export default defineComponent({
       type: Boolean,
       default: true,
     },
+    onlyThis: {
+      type: Boolean,
+      default: true,
+    },
     renderLabel: Function as PropType<RenderLabel>,
   },
 
-  emits: [UPDATE_MODEL_EVENT, CHANGE_EVENT, 'close', 'expand-change'],
+  emits: [
+    UPDATE_MODEL_EVENT,
+    CHANGE_EVENT,
+    'close',
+    'expand-change',
+    'confirm',
+  ],
 
   setup(props, { emit, slots }) {
     // for interrupt sync check status in lazy mode
@@ -160,18 +171,17 @@ export default defineComponent({
 
     const handleCheckChange: ElCascaderPanelContext['handleCheckChange'] = (
       node,
-      checked,
-      emitClose = true
+      checked
     ) => {
-      const { checkStrictly, multiple } = config.value
+      const { multiple } = config.value
       const oldNode = checkedNodes.value[0]
       manualChecked = true
 
       !multiple && oldNode?.doCheck(false)
       node.doCheck(checked)
       calculateCheckedValue()
-      emitClose && !multiple && !checkStrictly && emit('close')
-      !emitClose && !multiple && !checkStrictly && expandParentNode(node)
+      // emitClose && !multiple && !checkStrictly && emit('close')
+      // !emitClose && !multiple && !checkStrictly && expandParentNode(node)
     }
 
     const expandParentNode = (node) => {
@@ -190,7 +200,19 @@ export default defineComponent({
     }
 
     const clearCheckedNodes = () => {
-      checkedNodes.value.forEach((node) => node.doCheck(false))
+      getFlattedNodes(true)?.forEach((node) => node.doCheck(false))
+      calculateCheckedValue()
+      menus.value = menus.value.slice(0, 1)
+      expandingNode.value = null
+      emit('expand-change', [])
+    }
+
+    const onlyThisConfirm = () => {
+      emit('confirm', checkedValue.value)
+    }
+
+    const checkedAll = (checked: boolean) => {
+      getFlattedNodes(true)?.forEach((node) => node.doCheck(!checked))
       calculateCheckedValue()
       menus.value = menus.value.slice(0, 1)
       expandingNode.value = null
@@ -202,8 +224,12 @@ export default defineComponent({
       const oldNodes = checkedNodes.value
       const newNodes = getCheckedNodes(!checkStrictly)!
       // ensure the original order
-      const nodes = sortByOriginalOrder(oldNodes, newNodes)
-      const values = nodes.map((node) => node.valueByOption)
+      const nodes = sortByOriginalOrder(oldNodes, newNodes).filter(
+        (node) => node.data?.value !== 'cascader-all'
+      )
+      const values = nodes
+        .map((node) => node.valueByOption)
+        .filter((value) => value.value !== 'cascader-all')
       checkedNodes.value = nodes
       checkedValue.value = multiple ? values : values[0] ?? null
     }
@@ -341,6 +367,8 @@ export default defineComponent({
         lazyLoad,
         expandNode,
         handleCheckChange,
+        onlyThisConfirm,
+        checkedAll,
       })
     )
 
@@ -392,6 +420,8 @@ export default defineComponent({
       clearCheckedNodes,
       calculateCheckedValue,
       scrollToExpandingNode,
+      expandParentNode,
+      onlyThisConfirm,
     }
   },
 })
