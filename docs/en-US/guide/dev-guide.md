@@ -3,7 +3,7 @@ title: Local Development
 lang: en-US
 ---
 
-# Local Development
+## Local Development
 
 ## Bootstrap project
 
@@ -36,7 +36,6 @@ pnpm dev
 ```
 
 will start the local development environment.
-
 2. Add your component into `play/src/App.vue`
 
 > App.vue
