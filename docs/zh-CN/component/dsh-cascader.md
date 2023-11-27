@@ -163,6 +163,10 @@ dsh-cascader/lingxing-type
 | options                             | 选项的数据源， `value` 和 `label` 可以通过 `CascaderProps` 自定义.                                       | ^[object]`Record<string, unknown>[]`                       | —     |
 | props                               | 配置选项, 请参阅下面 `CascaderProps` 表。                                                            | ^[object]`CascaderProps`                                         | —     |
 | size                                | 尺寸                                                                                        | ^[enum]`'large' \| 'default' \| 'small'`                       | —     |
+| width            ^(道上会补充)                   | 输入框初始长度                                                                                       | ^[string]`'200px'`                       | 100%     |
+| focus-width      ^(道上会补充)                   | 输入框获取焦点时长度                                                                                       | ^[string]`'200px'`                       | 100%     |
+| onlyThis         ^(道上会补充)                   | 是否支持仅筛选此项                                                                                       | ^[boolean]                       | true    |
+| showFoot         ^(道上会补充)                   | 是否支持底部按钮                                                                                       | ^[boolean]                       | true    |
 | placeholder                         | 输入框占位文本                                                                                   | ^[string]                                                        | —     |
 | disabled                            | 是否禁用                                                                                      | ^[boolean]                                                       | —     |
 | clearable                           | 是否支持清空选项                                                                                  | ^[boolean]                                                       | —     |
@@ -187,6 +191,8 @@ dsh-cascader/lingxing-type
 | -------------- | --------------- | -------------------------------------------------------------- |
 | change         | 当绑定值变化时触发的事件    | ^[Function]`(value: CascaderValue) => void`                 |
 | expand-change  | 当展开节点发生变化时触发    | ^[Function]`(value: CascaderValue) => void`                 |
+| confirm ^(道上会补充)       | 确认按钮选定时触发的事件    | ^[Function]`(value: CascaderValue) => void`                 |
+| cancel  ^(道上会补充)       | 取消按钮选定时，或点击遮罩层触发的事件    | ^[Function]`(value: CascaderValue) => void`                 |
 | blur           | 当失去焦点时触发        | ^[Function]`(event: FocusEvent) => void`                    |
 | focus          | 当获得焦点时触发        | ^[Function]`(event: FocusEvent) => void`                    |
 | visible-change | 下拉框出现/隐藏时触发     | ^[Function]`(value: boolean) => void`                       |
